@@ -19,7 +19,7 @@ public:
 
 static int idx = -1;
 Node *buildTree(vector<int> preorder)
-{
+{ //O(n)
     idx++;
     if (preorder[idx] == -1)
     {
@@ -33,7 +33,7 @@ Node *buildTree(vector<int> preorder)
 }
 // preorder traversal
 void preOreder(Node *root)
-{
+{//O(n)
     if (root == NULL)
     {
         return;
@@ -45,7 +45,7 @@ void preOreder(Node *root)
 
 // inorder traversal
 void inOreder(Node *root)
-{
+{//O(n)
     if (root == NULL)
     {
         return;
@@ -56,7 +56,7 @@ void inOreder(Node *root)
 }
 // postorder traversal
 void postOreder(Node *root)
-{
+{//O(n)
     if (root == NULL)
     {
         return;
@@ -67,7 +67,7 @@ void postOreder(Node *root)
 }
 
 void LevelOreder(Node *root)
-{
+{//O(n)
     queue<Node *> q;
 
     q.push(root);
@@ -90,7 +90,7 @@ void LevelOreder(Node *root)
 }
 
 void LevelOreder_WithNextLine(Node *root)
-{
+{//O(n)
     queue<Node *> q;
 
     q.push(root);
