@@ -43,7 +43,7 @@ void preOreder(Node *root)
     preOreder(root->right); // right subtree
 }
 
-int sumTree(Node* root){
+int sumTree(Node* root){ //O(n)
     if(root == NULL){
         return 0;
     }
@@ -65,7 +65,7 @@ int main()
     cout << endl;
 
     sumTree(root);
-    
+
     cout << "after Conversion:";
     preOreder(root);
     cout << endl;
