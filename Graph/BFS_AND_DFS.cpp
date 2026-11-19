@@ -49,6 +49,41 @@ public:
         }
         cout << endl;
     }
+
+    void dfsHelper(int u, vector<bool> &vis)
+    {
+        // DFS traversal O(V+E)
+        cout << u << " ";
+        vis[u] = true;
+
+        for (int v : l[u])
+        {
+            if (!vis[v])
+            {
+                dfsHelper(v, vis);
+            }
+        }
+    }
+
+    void dfs()
+    {
+        int src = 0;
+        vector<bool> vis(V, false);
+        dfsHelper(src, vis);
+    }
+
+    void dfsDisconnected()
+    {
+        int src = 0;
+        vector<bool> vis(V, false);
+        for (int i = 0; i < V; i++)
+        {
+            if (!vis[i])
+            {
+                dfsHelper(i, vis);
+            }
+        }
+    }
 };
 
 int main()
@@ -59,6 +94,10 @@ int main()
     g.addEdge(1, 3);
     g.addEdge(2, 4);
     g.addEdge(2, 3);
-    cout<<"BFS Traversal : ";
+
+    cout << "BFS Traversal : ";
     g.bfs();
+
+    cout << "BFS Traversal : ";
+    g.dfsDisconnected();
 }
